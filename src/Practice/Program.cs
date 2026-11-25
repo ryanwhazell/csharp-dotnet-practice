@@ -1,4 +1,6 @@
-﻿using Practice.Models;
+﻿// This will probably all get deleted.
+
+using Practice.Models;
 
 var taskList = new TaskList();
 

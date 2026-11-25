@@ -1,0 +1,49 @@
+<section class="modifier-shell" aria-labelledby="modifier-title">
+  <header class="header">
+    <p class="eyebrow">Interactive tool</p>
+    <h1 id="modifier-title">Text Modifier</h1>
+    <p class="subtitle">There are two facets to this: the client-side transformation and the server-side API integration.</p>
+    <p class="subtitle">The text transformation is handled clientside, and will process automatically as you type. This was to get a short handle on simple angular syntax and data binding.</p>
+    <p class="subtitle">The server-side API integration is handled by a simple .NET 8 Web API project. The text is sent to the API when you click the "Send to .NET API" button, and the response is displayed below the output panel.</p>
+  </header>
+
+  <section class="card" aria-label="Text transformation">
+    <div class="field">
+      <label for="source-input">Input text</label>
+      <textarea id="source-input" rows="4" placeholder="Enter some text to transform..."
+        [ngModel]="rawInput()" (ngModelChange)="rawInput.set($event)"></textarea>
+    </div>
+
+    <div class="controls">
+      <div class="field">
+        <label for="mode-select">Transformation mode</label>
+        <select id="mode-select" [ngModel]="mode()" (ngModelChange)="mode.set($event)">
+          <option value="titlecase">Title Case</option>
+          <option value="uppercase">UPPERCASE</option>
+          <option value="slug">URL Slug (kebab-case)</option>
+          <option value="reverse">Reverse Text</option>
+        </select>
+      </div>
+
+      <button type="button" class="button button-secondary" (click)="clearInput()">Clear</button>
+      <button type="button" class="button button-primary" [disabled]="isSending()" (click)="sendToApi()">
+        {{ isSending() ? 'Sending...' : 'Send to .NET API' }}
+      </button>
+    </div>
+
+    <div class="output-panel">
+      <div class="output-header">
+        <span>Output</span>
+        <span class="stats">{{ wordCount() }} words · {{ charCount() }} chars</span>
+      </div>
+      <pre class="output-box" aria-live="polite">{{ transformedText() || 'Nothing to show yet...' }}</pre>
+    </div>
+
+    @if (serverResult(); as result) {
+      <div class="output-panel" aria-live="polite">
+        <div class="output-header">.NET API response</div>
+        <pre class="output-box">{{ result }}</pre>
+      </div>
+    }
+  </section>
+</section>

@@ -1,51 +1,13 @@
-<main class="modifier-shell">
-  <header class="header">
-    <h1>Input Modifier</h1>
-    <p class="subtitle">Type text and switch transformation modes to see live signal updates.</p>
+<div class="app-shell">
+  <header class="site-header">
+    <a class="brand" routerLink="/" aria-label="The Practice Zone home">The Practice Zone</a>
+    <nav aria-label="Main navigation">
+      <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Home</a>
+      <a routerLink="/text-modifier" routerLinkActive="active">Text Modifier</a>
+      <a routerLink="/bookmarks" routerLinkActive="active">Bookmarks</a>
+    </nav>
   </header>
-
-  <section class="card">
-    <div class="field">
-      <label for="source-input">Input Text</label>
-      <textarea id="source-input" rows="4" placeholder="Enter some text to transform..."
-        [(ngModel)]="rawInput"></textarea>
-    </div>
-
-    <div class="controls">
-      <div class="field">
-        <label for="mode-select">Transformation Mode</label>
-        <select id="mode-select" [(ngModel)]="mode">
-          <option value="titlecase">Title Case</option>
-          <option value="uppercase">UPPERCASE</option>
-          <option value="slug">URL Slug (kebab-case)</option>
-          <option value="reverse">Reverse Text</option>
-        </select>
-      </div>
-
-      <button type="button" class="btn-clear" (click)="clearInput()">
-        Clear
-      </button>
-
-      <button type="button" class="btn-clear" [disabled]="isSending()" (click)="sendToApi()">
-        {{ isSending() ? 'Sending...' : 'Send to .NET API' }}
-      </button>
-    </div>
-
-    <div class="output-panel">
-      <div class="output-header">
-        <span>Output</span>
-        <span class="stats">{{ wordCount() }} words · {{ charCount() }} chars</span>
-      </div>
-      <pre class="output-box">{{ transformedText() || 'Nothing to show yet...' }}</pre>
-    </div>
-
-    @if (serverResult()) {
-      <div class="output-panel">
-        <div class="output-header">
-          <span>.NET API Response</span>
-        </div>
-        <pre class="output-box">{{ serverResult() }}</pre>
-      </div>
-    }
-  </section>
-</main>
+  <main class="page-content">
+    <router-outlet />
+  </main>
+</div>
