@@ -1,4 +1,5 @@
-﻿// This will probably all get deleted.
+﻿// This will probably all get deleted. However,
+// I'll leave it in for now just as a space to toy with C# code.
 
 using Practice.Models;
 
