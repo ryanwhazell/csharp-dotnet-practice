@@ -1,0 +1,121 @@
+@bg-page: #0f172a;
+@bg-card: #1e293b;
+@bg-surface: #0b1120;
+@border-subtle: #334155;
+@text-primary: #f8fafc;
+@text-muted: #515863;
+@text-light: rgb(155, 167, 185);
+@accent: #38bdf8;
+
+.panel-surface() {
+  background: @bg-surface;
+  border: 1px solid @border-subtle;
+  border-radius: 8px;
+}
+
+.modifier-shell {
+  max-width: 720px;
+  margin: 2.5rem auto;
+  padding: 0 1.25rem;
+  color: @text-primary;
+  font-family: system-ui, -apple-system, sans-serif;
+
+  .header {
+    margin-bottom: 1.5rem;
+
+    h1 {
+      margin: 0 0 0.35rem;
+      font-size: 1.75rem;
+      color: @bg-page;
+    }
+
+    .subtitle {
+      margin: 0;
+      color: @text-muted;
+    }
+  }
+}
+
+.card {
+  background: @bg-card;
+  border: 1px solid @border-subtle;
+  border-radius: 12px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+
+  .field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    flex: 1;
+
+    label {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: @text-primary;
+    }
+
+    textarea,
+    select {
+      .panel-surface();
+      padding: 0.65rem 0.75rem;
+      color: @text-primary;
+      font-size: 0.95rem;
+      font-family: inherit;
+
+      &:focus {
+        outline: 2px solid @accent;
+        outline-offset: 1px;
+      }
+    }
+  }
+}
+
+.controls {
+  display: flex;
+  align-items: flex-end;
+  gap: 0.75rem;
+
+  .btn-clear {
+    padding: 0.65rem 1rem;
+    border-radius: 8px;
+    border: 1px solid @border-subtle;
+    background: transparent;
+    color: @text-primary;
+    cursor: pointer;
+
+    &:hover {
+      border-color: @accent;
+      color: @accent;
+    }
+  }
+}
+
+.output-panel {
+  .output-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.4rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+
+    .stats {
+      color: @text-light;
+      font-weight: 400;
+      font-size: 0.85rem;
+    }
+  }
+
+  .output-box {
+    .panel-surface();
+    margin: 0;
+    padding: 0.85rem;
+    min-height: 3.5rem;
+    white-space: pre-wrap;
+    word-break: break-word;
+    color: @accent;
+  }
+}
