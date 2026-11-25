@@ -1,13 +1,17 @@
-Just adding a basic README file to get into the flow for this test repository. 
+# C# & Full-Stack Practice Sandbox
 
-If you're taking the time to read this, this repo exists for a few reasons. 
+A hands-on learning repository dedicated to expanding from front-end engineering into full-stack and software engineering roles—focusing on **C#**, **.NET**, and **Angular** application development.
 
-The first is to expand my skillset beyond Front End development and into more of a 
-SWE and/or Full stack role. In that vein, I intend to explore C# and .NET 
-application development.
+## Purpose & Goals
 
-The second is to give myself additional experience with an ownership role over GitHub 
-repositoies. Creating my own pull requests, exploring my own documentation methodologies,
-and so on. 
+- **Full-Stack & Backend Expansion:** Build fluency in C# and the .NET ecosystem alongside modern single-page front-end architectures.
+- **Repository Ownership & Workflows:** Practice end-to-end GitHub ownership, including feature branching, structured pull requests, release changelogs, and maintainable technical documentation.
 
-Thanks for reading!
+## Repository Structure
+
+```text
+csharp-practice/
+├── src/Practice/           # C# practice models, logic, and backend exercises
+├── tests/Practice.Tests/   # Unit tests for C# components
+├── angular-practice/       # Standalone Angular front-end sandbox (TypeScript + Less)
+└── CHANGELOG.md            # Running log of notable workspace updates
