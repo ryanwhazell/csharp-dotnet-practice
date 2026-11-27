@@ -15,3 +15,17 @@ csharp-practice/
 ├── tests/Practice.Tests/   # Unit tests for C# components
 ├── angular-practice/       # Standalone Angular front-end sandbox (TypeScript + Less)
 └── CHANGELOG.md            # Running log of notable workspace updates
+```
+
+## Projects
+
+| Project | Status | What it demonstrates |
+|---|---|---|
+| Text Modifier | Complete | Angular data binding, client-side transforms, calling a .NET 8 Web API |
+| Bookmarks | In progress | CRUD, persistence, and API design |
+
+## Running Locally
+
+1. Start the API: `cd src/Practice` then `dotnet run` (listens on http://localhost:5106)
+2. Start the front end: `cd angular-practice` then `npm install` and `ng serve`
+3. Open http://localhost:4200

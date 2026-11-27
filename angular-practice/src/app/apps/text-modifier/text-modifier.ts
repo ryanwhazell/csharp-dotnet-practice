@@ -10,6 +10,7 @@ type TransformMode = 'uppercase' | 'titlecase' | 'slug' | 'reverse';
   templateUrl: './text-modifier.html',
   styleUrl: './text-modifier.less',
 })
+
 export class TextModifier {
   private readonly transformService = inject(TextTransform);
 
