@@ -10,7 +10,7 @@ A hands-on learning repository dedicated to expanding from front-end engineering
 ## Repository Structure
 
 ```text
-csharp-practice/
+csharp-dotnet-practice/
 ├── src/Practice/           # C# practice models, logic, and backend exercises
 ├── tests/Practice.Tests/   # Unit tests for C# components
 ├── angular-practice/       # Standalone Angular front-end sandbox (TypeScript + Less)
