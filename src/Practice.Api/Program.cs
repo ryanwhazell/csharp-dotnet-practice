@@ -1,6 +1,3 @@
-// To-Do, adjust the placement of this file to be more in-line with directory structure.
-// i.e., Bookmark.cs is in it's own section under the Models directory.
-
 using Practice.Api.Models;
 using Practice.Api.Services;
 
