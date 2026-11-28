@@ -1,3 +1,9 @@
+// To-Do, adjust the placement of this file to be more in-line with directory structure.
+// i.e., Bookmark.cs is in it's own section under the Models directory.
+
+using Practice.Api.Models;
+using Practice.Api.Services;
+
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddCors(options =>
@@ -22,20 +28,8 @@ app.MapGet("/api/ping", () => new
 
 app.MapPost("/api/transform", (TransformRequest request) =>
 {
-    var text = request.Text ?? string.Empty;
-
-    var result = (request.Mode ?? "uppercase").ToLowerInvariant() switch
-    {
-        "uppercase" => text.ToUpperInvariant(),
-        "titlecase" => System.Globalization.CultureInfo.CurrentCulture.TextInfo.ToTitleCase(text.ToLowerInvariant()),
-        "reverse" => new string(text.Reverse().ToArray()),
-        _ => text
-    };
-
+    var result = TextModifier.Transform(request.Text, request.Mode);
     return Results.Ok(new TransformResponse(result, result.Length));
 });
 
 app.Run();
-
-record TransformRequest(string? Text, string? Mode);
-record TransformResponse(string TransformedText, int Length);
