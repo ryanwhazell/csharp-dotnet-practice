@@ -26,6 +26,6 @@ csharp-dotnet-practice/
 
 ## Running Locally
 
-1. Start the API: `cd src/Practice` then `dotnet run` (listens on http://localhost:5106)
+1. Start the API: `cd src/Practice.Api` then `dotnet run` (listens on http://localhost:5106)
 2. Start the front end: `cd angular-practice` then `npm install` and `ng serve`
 3. Open http://localhost:4200
