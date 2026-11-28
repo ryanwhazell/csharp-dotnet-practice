@@ -1,12 +1,12 @@
 <section class="bookmarks-shell">
   <div class="header">
     <h1>Bookmarks</h1>
-    <p class="subtitle">This website bookmarking app is a small full-stack project with a C# Minimal API on the back end and an 
+    <p class="subtitle">This website bookmarking app is a small full-stack project with a C# Minimal API on the back end and an
       Angular front end. The API keeps bookmarks in memory and exposes endpoints to list, fetch, create and delete them.</p>
-    <p>Creating a bookmark runs server-side validation (required title, valid http/https URL, no duplicate URLs) and returns 
+    <p>Creating a bookmark runs server-side validation (required title, valid http/https URL, no duplicate URLs) and returns
       every problem at once as a 400 response grouped by field.</p>
-    <p>On the Angular side, a small service wraps HttpClient and mirrors the C# records as TypeScript interfaces. 
-      The component holds the list in a signal and binds the form with ngModel, and it displays the API's validation errors 
+    <p>On the Angular side, a small service wraps HttpClient and mirrors the C# records as TypeScript interfaces.
+      The component holds the list in a signal and binds the form with ngModel, and it displays the API's validation errors
       next to the matching inputs.</p>
   </div>
 

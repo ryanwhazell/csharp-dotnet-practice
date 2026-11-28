@@ -48,7 +48,7 @@ app.MapPost("/api/bookmarks", (CreateBookmarkRequest request) =>
     if (string.IsNullOrWhiteSpace(request.Title))
         errors["title"] = new[] { "Title is required." };
 
-    // We check to make sure the URL is valid. 
+    // We check to make sure the URL is valid.
     if (!Uri.TryCreate(request.Url, UriKind.Absolute, out var uri)
         || (uri.Scheme != Uri.UriSchemeHttp && uri.Scheme != Uri.UriSchemeHttps))
         errors["url"] = new[] { "Url must be a valid http or https address." };
