@@ -12,8 +12,11 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
   - `GET /api/bookmarks/{id}` returns one bookmark, or 404 if not found.
   - `POST /api/bookmarks` creates a bookmark and returns 201 Created.
   - `DELETE /api/bookmarks/{id}` removes a bookmark (204, or 404 if not found).
-- `Bookmark` record and `CreateBookmarkRequest` record in `Practice.Api/Models`.
-- Server-side validation on bookmark creation: title required, URL must be a valid http/https address, and duplicate URLs are rejected. All errors are returned together as a 400 validation response.
+- `Bookmark` and `CreateBookmarkRequest` records in `Practice.Api/Models`.
+- Server-side validation on bookmark creation: title required, URL must be a valid http/https address, and duplicate URLs are rejected. All errors are returned together as a 400 validation response, grouped by field.
+- Bookmarks page in `angular-practice`: add form, bookmark list, and delete buttons, styled to match the Text Modifier page.
+- `BookmarkApi` service and `bookmarks.model.ts` types mirroring the C# records.
+- Per-field validation messages shown in the form, driven by the API's 400 responses.
 - Bookmark request samples in `Practice.Api.http`.
 
 ### Changed
@@ -21,7 +24,9 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 - Moved text transformation logic out of the `/api/transform` endpoint into `Practice.Api/Services/TextModifier.cs`. Behavior is unchanged.
 
 ### Notes
-- Bookmark data is held in memory and resets whenever the API restarts. Persistence is planned for a later version.
+- Bookmark data is held in memory and resets whenever the API restarts.
+- The `isFavorite` flag can be set when a bookmark is created, but existing bookmarks can't be updated yet. No `PUT` endpoint exists.
+- Planned next: update endpoint with a favorite toggle, tag filtering, and persistent storage.
 
 ## [0.2.0] - 2025-11-27
 
