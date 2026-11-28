@@ -1,6 +1,7 @@
 namespace Practice.Api.Models;
 
-public record Boomkar(
+// Define our Boookmark record.
+public record Bookmark(
     Guid Id,
     string Title,
     string Url,
