@@ -1,6 +1,6 @@
 namespace Practice.Api.Models;
 
-// Define our Boookmark record.
+// Define our Bookmark record.
 public record Bookmark(
     Guid Id,
     string Title,
