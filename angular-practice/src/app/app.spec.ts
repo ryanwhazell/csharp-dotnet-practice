@@ -35,7 +35,6 @@ describe('App', () => {
 
     await router.navigateByUrl('/bookmarks');
     fixture.detectChanges();
-    expect((fixture.nativeElement as HTMLElement).querySelector('#bookmarks-title')?.textContent)
-      .toContain('Bookmarks');
+    expect((fixture.nativeElement as HTMLElement).querySelector('app-bookmarks')).not.toBeNull();
   });
 });

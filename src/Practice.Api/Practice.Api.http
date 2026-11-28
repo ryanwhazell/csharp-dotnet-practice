@@ -4,3 +4,46 @@ GET {{Practice.Api_HostAddress}}/weatherforecast/
 Accept: application/json
 
 ###
+
+### Valid bookmark
+POST http://localhost:5106/api/bookmarks
+Content-Type: application/json
+
+{
+  "title": "MDN",
+  "url": "https://developer.mozilla.org",
+  "tag": "docs",
+  "isFavorite": false
+}
+
+### A second valid bookmark
+POST http://localhost:5106/api/bookmarks
+Content-Type: application/json
+
+{
+    "title": "Angular Docs",
+    "url": "https://angular.dev",
+    "tag": "docs",
+    "isFavorite": false
+}
+
+### Invalid bookmark
+POST http://localhost:5106/api/bookmarks
+Content-Type: application/json
+
+{
+  "title": "",
+  "url": "not a url",
+  "tag": "docs",
+  "isFavorite": false
+}
+
+
+### Get one bookmark. GUID's are generated on a per session basis and will need to be re-retrieved each time they're tested here.
+GET http://localhost:5106/api/bookmarks/d8357e3e-0798-4c0a-b446-264edce0cbbd
+
+### Get one that doesn't exist
+GET http://localhost:5106/api/bookmarks/00000000-0000-0000-0000-000000000000
+
+### Delete a bookmark
+DELETE http://localhost:5106/api/bookmarks/d8357e3e-0798-4c0a-b446-264edce0cbbd

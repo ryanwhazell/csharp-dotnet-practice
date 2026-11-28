@@ -1,4 +1,4 @@
-﻿using Practice;
+﻿using Practice.Models;
 using Xunit;
 
 namespace Practice.Tests;
